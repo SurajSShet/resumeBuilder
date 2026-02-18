@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - Create Your Professional Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Resume Builder</h1>
+            <p class="subtitle">Create your professional resume in minutes</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Form Section -->
+            <div class="form-section">
+                <h2>Your Information</h2>
+                
+                <!-- Personal Information -->
+                <section class="form-group">
+                    <h3>Personal Details</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="title">Professional Title *</label>
+                            <input type="text" id="title" placeholder="Software Engineer" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="john.doe@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="San Francisco, CA">
+                        </div>
+                        <div class="input-group">
+                            <label for="linkedin">LinkedIn</label>
+                            <input type="url" id="linkedin" placeholder="linkedin.com/in/johndoe">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="summary">Professional Summary</label>
+                        <textarea id="summary" rows="4" placeholder="Brief overview of your professional background and key skills..."></textarea>
+                    </div>
+                </section>
+
+                <!-- Work Experience -->
+                <section class="form-group">
+                    <div class="section-header">
+                        <h3>Work Experience</h3>
+                        <button type="button" class="btn-add" onclick="addExperience()">+ Add Experience</button>
+                    </div>
+                    <div id="experienceList"></div>
+                </section>
+
+                <!-- Education -->
+                <section class="form-group">
+                    <div class="section-header">
+                        <h3>Education</h3>
+                        <button type="button" class="btn-add" onclick="addEducation()">+ Add Education</button>
+                    </div>
+                    <div id="educationList"></div>
+                </section>
+
+                <!-- Skills -->
+                <section class="form-group">
+                    <h3>Skills</h3>
+                    <div class="input-group">
+                        <label for="skills">Enter skills (comma-separated)</label>
+                        <textarea id="skills" rows="3" placeholder="JavaScript, React, Node.js, Python, SQL, Git"></textarea>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn-secondary" onclick="clearForm()">Clear All</button>
+                    <button type="button" class="btn-primary" onclick="generatePDF()">Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div id="resumePreview" class="resume-preview">
+                    <div class="resume-header">
+                        <h1 id="previewName">Your Name</h1>
+                        <p id="previewTitle" class="preview-title">Your Professional Title</p>
+                        <div id="previewContact" class="preview-contact"></div>
+                    </div>
+
+                    <div id="previewSummary" class="resume-section" style="display: none;">
+                        <h2>Professional Summary</h2>
+                        <p id="previewSummaryText"></p>
+                    </div>
+
+                    <div id="previewExperience" class="resume-section" style="display: none;">
+                        <h2>Work Experience</h2>
+                        <div id="previewExperienceList"></div>
+                    </div>
+
+                    <div id="previewEducation" class="resume-section" style="display: none;">
+                        <h2>Education</h2>
+                        <div id="previewEducationList"></div>
+                    </div>
+
+                    <div id="previewSkills" class="resume-section" style="display: none;">
+                        <h2>Skills</h2>
+                        <div id="previewSkillsList" class="skills-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
